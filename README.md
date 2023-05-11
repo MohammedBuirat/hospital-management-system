@@ -1,1 +1,1 @@
-![erDiagram](https://github.com/MohammedBuirat/hospital-management-system/assets/114314089/66d4344e-b072-4163-8e5e-e727035ad55e)
+![image](https://github.com/MohammedBuirat/hospital-management-system/assets/114314089/642a2159-076d-4268-ab8a-be516a6b9e14)
