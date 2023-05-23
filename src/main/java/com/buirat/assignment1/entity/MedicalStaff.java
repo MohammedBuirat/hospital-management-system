@@ -1,4 +1,5 @@
 package com.buirat.assignment1.entity;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -15,6 +16,7 @@ public class MedicalStaff implements Serializable {
     private Integer id;
     private String name;
     @Column(name = "date_of_birth")
+    @JsonFormat(pattern = "yyyy-MM-dd")
     private LocalDate dateOfBirth;
     private String gender;
     @Column(name = "address", length = 100)

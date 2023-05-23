@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -82,25 +84,48 @@ public class MedicalStaffController {
     }
 
     @PostMapping("/add-medical-staff")
-    public ResponseEntity<MedicalStaffDto> addMedicalStaff(@RequestBody Map<String, String> body) {
-        if (body.isEmpty()||!body.containsKey("id")) {
-            return null;
+    public ResponseEntity<MedicalStaffDto> addMedicalStaff(
+                                                              @RequestBody Map<String, String> body) {
+
+        if (body.containsKey("id")) {
+            MedicalStaff medicalStaff = new MedicalStaff();
+            medicalStaff.setId(Integer.valueOf(body.get("id")));
+
+            if (body.containsKey("name")) {
+                medicalStaff.setName(body.get("name"));
+            }
+
+            if (body.containsKey("dateOfBirth")) {
+                String dateOfBirthStr = body.get("dateOfBirth");
+                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+                LocalDate dateOfBirth = LocalDate.parse(dateOfBirthStr, formatter);
+                medicalStaff.setDateOfBirth(dateOfBirth);
+            }
+
+            if (body.containsKey("gender")) {
+                medicalStaff.setGender(body.get("gender"));
+            }
+
+            if (body.containsKey("address")) {
+                medicalStaff.setAddress(body.get("address"));
+            }
+
+            if (body.containsKey("contactNumber")) {
+                medicalStaff.setContactNumber(body.get("contactNumber"));
+            }
+
+            if (body.containsKey("speciality")) {
+                medicalStaff.setSpeciality(body.get("speciality"));
+            }
+
+            if (body.containsKey("department")) {
+                medicalStaff.setDepartment(body.get("department"));
+            }
+            medicalStaffRepository.save(medicalStaff);
+            return ResponseEntity.ok(convertToDto(medicalStaff));
+        } else {
+            return ResponseEntity.notFound().build();
         }
-        MedicalStaff medicalStaff = new MedicalStaff();
-        medicalStaff.setId(Integer.valueOf(body.get("id")));
-        if (body.containsKey("name")) {
-            medicalStaff.setName(body.get("name"));
-        }
-        if (body.containsKey("gender")) {
-            medicalStaff.setGender(body.get("gender"));
-        }
-        if (body.containsKey("speciality")) {
-            medicalStaff.setSpeciality(body.get("speciality"));
-        }
-        if (body.containsKey("department")) {
-            medicalStaff.setDepartment(body.get("department"));
-        }
-        medicalStaffRepository.save(medicalStaff);
-        return ResponseEntity.ok(convertToDto(medicalStaff));
     }
+
 }
