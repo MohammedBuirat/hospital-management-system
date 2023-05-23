@@ -3,10 +3,38 @@
 
 <table>
   <tr>
-    <th>http method</th>
-    <th></th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th>HTTP method</th>
+    <th>URL path</th>
+    <th>HTTP Status Code</th>
+    <th>description</th>
+    <th>sample request</th>
+    <th>sample response</th>
     <tr>
+      <tr>
+  <td>GET</td>
+  <td>/get-all-appointments</td>
+  <td>200 OK</td>
+  <td>Retrieves all appointments</td>
+  <td>N/A (No request body)</td>
+  <td>
+    <pre>
+      Status: 200 OK
+      Body: List of AppointmentDto objects representing the appointments
+    </pre>
+  </td>
+</tr>
+  <tr>
+  <td>GET</td>
+  <td>/get-appointment/{id}</td>
+  <td>200 OK</td>
+  <td>Retrieves an appointment by ID</td>
+  <td>N/A (No request body)</td>
+  <td>
+    <pre>
+      Status: 200 OK
+      Body: AppointmentDto object representing the requested appointment
+    </pre>
+  </td>
+</tr>
+  
   </table>
