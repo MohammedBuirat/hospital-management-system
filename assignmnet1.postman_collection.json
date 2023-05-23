@@ -1,15 +1,18 @@
 {
 	"info": {
-		"_postman_id": "bb121cd7-f367-421c-a519-3a19ac008f8e",
+		"_postman_id": "b9e566e3-ad40-4be1-ab8f-fd340489a974",
 		"name": "assignmnet1",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "27563345"
 	},
 	"item": [
 		{
-			"name": "http://localhost:8080/add-medical-staff",
+			"name": "http://localhost:8080/get-all-patients",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
 			"request": {
-				"method": "POST",
+				"method": "GET",
 				"header": [],
 				"body": {
 					"mode": "raw",
@@ -21,14 +24,225 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/add-medical-staff",
+					"raw": "http://localhost:8080/get-all-patients",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"add-medical-staff"
+						"get-all-patients"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/get-patient/1",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":\"7\",\r\n    \"name\":\"Mohammed\",\r\n    \"gender\":\"M\",\r\n    \"speciality\":\"nurse\",\r\n    \"department\":\"heart\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/get-patient/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"get-patient",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/remove-patient/4",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":\"7\",\r\n    \"name\":\"Mohammed\",\r\n    \"gender\":\"M\",\r\n    \"speciality\":\"nurse\",\r\n    \"department\":\"heart\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/remove-patient/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"remove-patient",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/update-patient/3",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"room\":\"200\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/update-patient/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"update-patient",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/get-all-medical-staff",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"room\":\"200\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/get-all-medical-staff",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"get-all-medical-staff"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/get-medical-staff/1",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"room\":\"200\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/get-medical-staff/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"get-medical-staff",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/remove-medical-staff/7",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/remove-medical-staff/7",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"remove-medical-staff",
+						"7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/remove-medical-staff/11",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/remove-medical-staff/11",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"remove-medical-staff",
+						"11"
 					]
 				}
 			},
@@ -41,7 +255,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\" :\"khaled\"\r\n}",
+					"raw": "{\r\n    \"name\":\"Kareem\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -64,19 +278,118 @@
 			"response": []
 		},
 		{
-			"name": "http://localhost:8080/get-medical-staff/1",
+			"name": "http://localhost:8080/add-medical-staff",
 			"request": {
-				"method": "GET",
+				"method": "POST",
 				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":\"11\",\r\n    \"name\":\"Kareem\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
-					"raw": "http://localhost:8080/get-medical-staff/1",
+					"raw": "http://localhost:8080/add-medical-staff",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"get-medical-staff",
+						"add-medical-staff"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/add-medical-staff",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":\"1\",\r\n    \"name\":\"Kareem\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/add-medical-staff",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"add-medical-staff"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/get-all-bills",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":\"1\",\r\n    \"name\":\"Kareem\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/get-all-bills",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"get-all-bills"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/get-bill/1",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":\"1\",\r\n    \"name\":\"Kareem\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/get-bill/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"get-bill",
 						"1"
 					]
 				}
@@ -84,78 +397,28 @@
 			"response": []
 		},
 		{
-			"name": "http://localhost:8080/get-all-medical-staff",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8080/get-all-medical-staff",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"get-all-medical-staff"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "http://localhost:8080/remove-patient/5",
+			"name": "http://localhost:8080/remove-bill/1",
 			"request": {
 				"method": "DELETE",
 				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":\"1\",\r\n    \"name\":\"Kareem\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
-					"raw": "http://localhost:8080/remove-patient/5",
+					"raw": "http://localhost:8080/remove-bill/1",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"remove-patient",
-						"5"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "http://localhost:8080/remove-patient/10",
-			"request": {
-				"method": "DELETE",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8080/remove-patient/10",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"remove-patient",
-						"10"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "http://localhost:8080/get-patient/1",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8080/get-patient/1",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"get-patient",
+						"remove-bill",
 						"1"
 					]
 				}
@@ -163,19 +426,88 @@
 			"response": []
 		},
 		{
-			"name": "http://localhost:8080/get-all-patients",
+			"name": "http://localhost:8080/update-bill/2",
 			"request": {
-				"method": "GET",
+				"method": "PUT",
 				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"paymentMethod\":\"Cash\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
-					"raw": "http://localhost:8080/get-all-patients",
+					"raw": "http://localhost:8080/update-bill/2",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"get-all-patients"
+						"update-bill",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/add-bill",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n    \"id\":\"1\",\r\n    \"paymentMethod\":\"Cash\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/add-bill",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"add-bill"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/get-appointment",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n    \"id\":\"1\",\r\n    \"paymentMethod\":\"Cash\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/get-appointment",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"get-appointment"
 					]
 				}
 			},
